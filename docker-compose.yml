@@ -1,0 +1,67 @@
+# Postural · despliegue en una VPS con Docker Compose.
+# Arranque:  docker compose up -d --build
+name: postural
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # Aplica migraciones y carga los datos iniciales (idempotente) y termina.
+  migrate:
+    build: { context: ., target: app }
+    image: postural-app
+    env_file: .env
+    command: ["node", "server/src/scripts/seed.ts"]
+    depends_on:
+      db: { condition: service_healthy }
+    restart: "no"
+
+  app:
+    image: postural-app
+    env_file: .env
+    restart: unless-stopped
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+    expose: ["3000"]
+
+  # Tareas programadas: Google Calendar y recordatorios de WhatsApp. Una sola instancia.
+  worker:
+    image: postural-app
+    env_file: .env
+    command: ["node", "server/src/worker.ts"]
+    restart: unless-stopped
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+
+  web:
+    build: { context: ., target: web, args: { SITE: "${SITE}" } }
+    restart: unless-stopped
+    environment:
+      DOMAIN: ${DOMAIN}
+      ALIAS_DOMAINS: ${ALIAS_DOMAINS:-}
+      ACME_EMAIL: ${ACME_EMAIL}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [app]
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:

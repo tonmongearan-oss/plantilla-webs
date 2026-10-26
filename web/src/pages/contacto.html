@@ -1,0 +1,38 @@
+<!--{"title": "Contacto · {{negocio.nombre}}", "description": "Teléfono, correo, dirección y horario de {{negocio.nombre}}. Escríbenos o reserva online.", "page": "contacto"}-->
+<section class="page-hero">
+  <div class="wrap">
+    <div>
+      <ol class="crumbs"><li><a href="index.html">Inicio</a></li><li>Contacto</li></ol>
+      <h1>¿<span>Hablamos</span>?</h1>
+      <p class="lead">Llámanos, escríbenos o ven a vernos. Si quieres pedir cita, puedes <a href="reservar.html">reservar online</a>.</p>
+    </div>
+  </div>
+</section>
+<section class="section" aria-label="Datos de contacto y formulario">
+  <div class="wrap contact">
+    <div class="contact-card">
+      <div class="c-line" data-copy-wrap><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg></span><div><b>Teléfono</b><span data-copy-text data-center="phone">{{negocio.telefono}}</span></div><button class="icon-btn" type="button" data-act="copy" data-copy-center="phone" data-v="{{negocio.telefono}}" aria-label="Copiar teléfono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0014.5 4h-9A1.5 1.5 0 004 5.5v9A1.5 1.5 0 005.5 16H8"/></svg></button></div>
+      <div class="c-line" data-copy-wrap><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></span><div><b>Correo</b><span data-copy-text data-center="email">{{negocio.email}}</span></div><button class="icon-btn" type="button" data-act="copy" data-copy-center="email" data-v="{{negocio.email}}" aria-label="Copiar correo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0014.5 4h-9A1.5 1.5 0 004 5.5v9A1.5 1.5 0 005.5 16H8"/></svg></button></div>
+      <div class="c-line" data-copy-wrap><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><b>Dirección</b><span data-copy-text><span data-center="address">{{negocio.direccion}}</span>, <span data-center="city">{{negocio.ciudad}}</span></span></div><button class="icon-btn" type="button" data-act="copy" data-copy-center="address" data-v="{{negocio.direccion}}, {{negocio.ciudad}}" aria-label="Copiar dirección"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5.5A1.5 1.5 0 0014.5 4h-9A1.5 1.5 0 004 5.5v9A1.5 1.5 0 005.5 16H8"/></svg></button></div>
+      <div class="c-line"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><div><b>Atención al público</b><span data-center="publicHours">{{negocio.horario}}</span></div><span></span></div>
+      <div class="mini-map">
+        <svg viewBox="0 0 520 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="520" height="200" fill="var(--surface-2)"/><path d="M0 165 C120 145 260 185 520 155 V200 H0Z" fill="var(--mist)"/><g stroke="var(--line-2)" stroke-width="10" fill="none" stroke-linecap="round"><path d="M-10 60 L540 110"/><path d="M140 -10 L190 220"/><path d="M360 -10 L330 220"/></g><g stroke="var(--line)" stroke-width="4" fill="none"><path d="M-10 20 L540 40"/><path d="M60 -10 L80 220"/><path d="M450 -10 L470 220"/><path d="M-10 132 L540 137"/></g><text x="22" y="52" font-size="11" fill="var(--ink-3)" font-family="Figtree, sans-serif" transform="rotate(5.2 22 52)">Av. de la Constitució</text><g transform="translate(262 84)"><circle r="22" fill="var(--sage)" opacity=".2"/><path d="M0 8s-12-10-12-19a12 12 0 0124 0C12-2 0 8 0 8z" fill="var(--brand-btn)"/><circle cy="-11" r="4.5" fill="#fff"/></g></svg>
+        <a class="btn btn-primary btn-sm" data-maps href="https://www.google.com/maps/search/?api=1&query={{mapsQuery}}" target="_blank" rel="noopener">Abrir en Google Maps</a>
+      </div>
+    </div>
+    <form class="form-card" id="contact-form" novalidate>
+      <h2 style="font-family:var(--f-display);font-size:1.6rem">Escríbenos</h2>
+      <p style="color:var(--ink-2);font-size:.92rem">Para dudas generales.</p>
+      <div class="grid2">
+        <div class="field"><label for="cf-name">Nombre</label><input class="input" id="cf-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="cf-phone">Teléfono (opcional)</label><input class="input" id="cf-phone" name="phone" autocomplete="tel" inputmode="tel"></div>
+      </div>
+      <div class="field"><label for="cf-email">Correo electrónico</label><input class="input" id="cf-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="cf-text">Mensaje</label><textarea class="input" id="cf-text" name="text" required></textarea></div>
+      <div class="hp" aria-hidden="true"><label for="cf-website">No rellenes este campo</label><input id="cf-website" name="website" tabindex="-1" autocomplete="off"></div>
+      <label class="check"><input type="checkbox" name="privacy" id="cf-privacy"><span>He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
+      <div id="cf-status" aria-live="polite"></div>
+      <div><button class="btn btn-brand" type="submit">Enviar mensaje</button></div>
+    </form>
+  </div>
+</section>

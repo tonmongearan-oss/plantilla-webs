@@ -1,0 +1,16 @@
+<!--{"title": "Servicios · {{negocio.nombre}}", "description": "Servicios de {{negocio.nombre}}. Reserva online.", "page": "servicios"}-->
+<section class="page-hero">
+  <div class="wrap">
+    <div>
+      <ol class="crumbs"><li><a href="index.html">Inicio</a></li><li>Servicios</li></ol>
+      <h1>Nuestros <span>servicios</span></h1>
+      <p class="lead">{{negocio.descripcion}}</p>
+      <div class="acts"><a class="btn btn-brand" href="reservar.html">{{ctaReservar}}</a></div>
+    </div>
+  </div>
+</section>
+<nav class="subnav" aria-label="Servicios"><div class="wrap">{{subnavServicios}}</div></nav>
+<section class="section" style="padding-block:16px 24px"><div class="wrap">
+{{serviciosFilas}}
+</div></section>
+<section class="cta-band" aria-label="Reservar"><div class="wrap"><div><h2>{{llamada.titulo}}</h2><p>{{llamada.texto}}</p></div><div class="acts"><a class="btn btn-white btn-lg" href="reservar.html">{{ctaReservar}}</a></div></div></section>

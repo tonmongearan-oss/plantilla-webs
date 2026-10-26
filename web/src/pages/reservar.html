@@ -1,0 +1,16 @@
+<!--{"title": "Reserva tu cita · {{negocio.nombre}}", "description": "Reserva online tu cita en {{negocio.nombre}}: elige servicio, profesional y hora.", "page": "reservar", "scripts": ["booking"]}-->
+<section class="page-hero" style="background:var(--surface-2)">
+  <div class="wrap" style="padding-block:34px 28px">
+    <div>
+      <ol class="crumbs"><li><a href="index.html">Inicio</a></li><li>Reservar</li></ol>
+      <h1>Reserva tu <span>cita</span></h1>
+      <p class="lead">Elige el servicio, el profesional y la hora que mejor te va. Solo te pedimos nombre, teléfono y correo.</p>
+    </div>
+  </div>
+</section>
+<section class="section" style="padding-top:28px" aria-label="Reserva">
+  <div class="wrap">
+    <div id="booking-app" aria-live="polite"></div>
+    <div class="bk-help"><span>¿Prefieres que te atendamos por teléfono? <b data-center="phone">{{negocio.telefono}}</b> · <span data-center="publicHours">{{negocio.horario}}</span></span><a class="btn btn-ghost btn-sm" data-tel href="tel:{{telHref}}">Llamar</a></div>
+  </div>
+</section>

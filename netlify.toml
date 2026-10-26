@@ -1,0 +1,24 @@
+# Netlify · web pública de UN cliente.
+# En Netlify → Site configuration → Environment variables, define SITE con la carpeta del cliente (sitios/<SITE>).
+# La dirección de su API sale de sitios/<SITE>/sitio.json → despliegue.api (o de la variable API_URL):
+# el build genera web/dist/_redirects para que /api/* y /webhooks/* vayan a su servidor.
+
+[build]
+  command = "node web/build.mjs --site $SITE"
+  publish = "web/dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

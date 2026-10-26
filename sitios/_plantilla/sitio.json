@@ -1,0 +1,75 @@
+{
+  "slug": "_plantilla",
+  "idioma": "es",
+  "negocio": {
+    "nombre": "Taller Ejemplo Bicis",
+    "nombreCorto": "Taller Ejemplo",
+    "sector": "taller",
+    "descripcion": "Reparación y puesta a punto de bicicletas. Reserva tu hora online y te la dejamos lista.",
+    "telefono": "600 000 000",
+    "email": "hola@ejemplo.com",
+    "direccion": "Calle Ejemplo 1",
+    "ciudad": "08000 Barcelona",
+    "horario": "Lunes a viernes, de 10:00 a 14:00 y de 16:00 a 20:00",
+    "registro": "",
+    "web": "",
+    "redes": { "instagram": "", "facebook": "" }
+  },
+  "marca": {
+    "colores": {
+      "acento": "#2F7D5B",
+      "acentoTexto": "#1F5C42",
+      "acentoSuave": "#DDEFE6",
+      "boton": "#256B4C",
+      "botonHover": "#1C523A",
+      "banda": "#E6F2EC",
+      "fondoSuave": "#F5F7F6",
+      "niebla": "#EEF5F1",
+      "texto": "#1E2421",
+      "botonSuave": "#D6EBE1",
+      "botonSuaveTexto": "#1C523A"
+    },
+    "tipografias": { "titulos": "Manrope", "texto": "Inter", "pesosTitulos": "600;700;800", "pesosTexto": "400;500;600;700" },
+    "logo": { "modo": "texto" },
+    "favicon": "",
+    "imagenCompartir": ""
+  },
+  "textos": { "reservar": "Pide tu hora", "clientes": "Clientes", "profesionales": "Equipo" },
+  "portada": {
+    "etiqueta": "Taller en Barcelona",
+    "titulo": "Tu bici a punto,",
+    "tituloDestacado": "sin esperas",
+    "subtitulo": "Reserva online la hora que te va bien y tráenos la bici. Te avisamos por WhatsApp cuando esté lista.",
+    "imagen": "",
+    "imagenAlt": "",
+    "pruebas": ["Presupuesto antes de reparar", "Reserva online en 1 minuto", "Aviso por WhatsApp"]
+  },
+  "ventajasTitulo": "Mecánicos que montan y ruedan",
+  "ventajas": [
+    { "icono": "herramienta", "titulo": "Todas las marcas", "texto": "Carretera, montaña, urbana y eléctrica." },
+    { "icono": "reloj", "titulo": "Plazos claros", "texto": "Te decimos cuándo estará lista antes de empezar." },
+    { "icono": "escudo", "titulo": "Garantía", "texto": "Garantía en mano de obra y recambios." },
+    { "icono": "tarjeta", "titulo": "Pago fácil", "texto": "Tarjeta, Bizum o efectivo en el taller." }
+  ],
+  "llamada": { "titulo": "¿Tu bici hace ruidos raros?", "texto": "Pide hora para una revisión y te decimos qué necesita." },
+  "equipo": { "texto": "Cada mecánico tiene su propia agenda: puedes reservar con quien prefieras." },
+  "menu": [
+    { "texto": "Servicios", "url": "servicios.html", "id": "servicios" },
+    { "texto": "Equipo", "url": "especialistas.html", "id": "especialistas" },
+    { "texto": "Contacto", "url": "contacto.html", "id": "contacto" }
+  ],
+  "modulos": { "reservas": true, "clases": false, "asistente": true, "whatsapp": true, "pagos": { "activo": true, "porcentaje": 40, "minutosReserva": 30 } },
+  "reservas": { "antelacionMinutos": 120, "diasVista": 45, "cancelarHorasAntes": 12, "estadoOnline": "confirmada", "aforoPorDefecto": 10 },
+  "recordatorios": { "minutosAntes": [1440], "instrucciones": "Si no puedes venir, cancela o cambia la hora desde el enlace o llámanos." },
+  "servicioInicial": "revision",
+  "servicios": [
+    { "id": "revision", "nombre": "Revisión general", "duracion": 30, "precio": 35, "icono": "herramienta", "breve": "Ajuste de frenos, cambios y comprobación general.", "descripcion": "Revisamos y ajustamos frenos, cambios, ruedas y dirección. Te avisamos si hace falta cambiar alguna pieza antes de hacerlo.", "puntos": ["Ajuste de frenos y cambios", "Centrado de ruedas", "Engrase de transmisión"] },
+    { "id": "puesta-punto", "nombre": "Puesta a punto completa", "duracion": 60, "precio": 70, "icono": "bici", "breve": "Desmontaje, limpieza y ajuste completo.", "descripcion": "Limpieza a fondo de transmisión, revisión de rodamientos y ajuste completo para que la bici quede como nueva." },
+    { "id": "pinchazo", "nombre": "Reparación de pinchazo", "duracion": 15, "precio": 12, "icono": "check", "breve": "Cámara o tubeless, en el momento.", "descripcion": "Reparamos o cambiamos la cámara, o resellamos el tubeless." }
+  ],
+  "clases": null,
+  "especialistas": [],
+  "asistente": { "salud": false, "faq": [] },
+  "whatsapp": { "prefijoPlantillas": "" },
+  "despliegue": { "web": "", "api": "" }
+}

@@ -1,0 +1,36 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div style="display:grid;gap:14px;align-content:start">
+      <a href="index.html" class="logo" aria-label="{{negocio.nombre}}, inicio"><span class="logo-img" role="img" aria-label="{{negocio.nombreCorto}}"></span><span class="logo-txt">{{negocio.nombreCorto}}</span></a>
+      <p>{{negocio.descripcion}}</p>
+      <div><a class="btn btn-brand btn-sm" href="reservar.html">{{ctaReservar}}</a></div>
+    </div>
+    <div>
+      <h4>Visítanos</h4>
+      <ul>
+        <li><span data-center="address">{{negocio.direccion}}</span><br><span data-center="city">{{negocio.ciudad}}</span></li>
+        <li><a href="tel:{{telHref}}" data-tel data-center="phone">{{negocio.telefono}}</a></li>
+        <li><a href="mailto:{{negocio.email}}" data-mailto data-center="email">{{negocio.email}}</a></li>
+        <li data-center="publicHours">{{negocio.horario}}</li>
+      </ul>
+    </div>
+    <div>
+      <h4>La web</h4>
+      <ul>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="especialistas.html">{{textos.profesionales}}</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="reservar.html">{{ctaReservar}}</a></li>
+      </ul>
+    </div>
+    <div>
+      {{redesBloque}}
+      <h4>{{textos.clientes}}</h4>
+      <ul>
+        <li><a href="reservar.html">Reservar</a></li>
+        <li><a href="privacidad.html">Política de privacidad</a></li>
+      </ul>
+    </div>
+    <div class="foot-bottom"><span>© {{year}} {{negocio.nombre}}</span><a class="pro-link" href="admin/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 017 0v2.5"/></svg>Área profesional</a></div>
+  </div>
+</footer>

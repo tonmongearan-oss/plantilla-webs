@@ -1,0 +1,35 @@
+{
+	email {$ACME_EMAIL}
+}
+
+{$DOMAIN} {$ALIAS_DOMAINS} {
+	# Las direcciones de ALIAS_DOMAINS (p. ej. sin www) redirigen a la principal
+	@alias not host {$DOMAIN}
+	redir @alias https://{$DOMAIN}{uri} permanent
+
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+		-Server
+	}
+
+	@api path /api/* /webhooks/*
+	handle @api {
+		reverse_proxy app:3000
+	}
+
+	@assets path /assets/*
+	header @assets Cache-Control "public, max-age=604800"
+
+	handle {
+		root * /srv
+		try_files {path} {path}.html {path}/index.html
+		file_server
+	}
+}
+

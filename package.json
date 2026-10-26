@@ -1,0 +1,32 @@
+{
+  "name": "plantilla-webs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Motor común de webs con reservas, Google Calendar, WhatsApp, pagos y panel. Cada cliente es una carpeta en sitios/.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "node server/src/server.ts",
+    "dev": "node --watch server/src/server.ts",
+    "worker": "node server/src/worker.ts",
+    "migrate": "node server/src/migrate.ts",
+    "seed": "node server/src/scripts/seed.ts",
+    "create-admin": "node server/src/scripts/create-admin.ts",
+    "build:web": "node web/build.mjs",
+    "build:demo": "node web/build.mjs --demo",
+    "test": "node --test --test-concurrency=1 \"server/test/*.test.ts\"",
+    "typecheck": "tsc -p tsconfig.json",
+    "start:demo": "node server/src/demo-all.ts",
+    "nuevo-sitio": "node scripts/nuevo-sitio.mjs"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/pg": "^8.11.10",
+    "typescript": "^5.8.3"
+  }
+}
